@@ -1,8 +1,10 @@
 public class Task {
 
     private String Name;
-
-    private String dueDate;
+    
+    private int monthDue;
+    
+    private int day;
 
     private String course;
 
@@ -11,9 +13,52 @@ public class Task {
     Task(String Name, String dueDate, String course, int rating) {
         this.Name = Name;
         this.course = course;
-        this.dueDate = dueDate;
         this.course = course;
         this.rating = rating;
+        this.day = day(dueDate);
+        this.monthDue = month(dueDate);
     }
 
+    public int month(String dueDate) {
+        String month = "";
+        int i = 0;
+        boolean isInt = true;
+        while(isInt) {
+            try {
+                Integer.parseInt(String.valueOf(dueDate.charAt(i)));
+            }catch(NumberFormatException e) {
+                isInt = false;
+            }
+            if(isInt) {
+                month = month.concat(String.valueOf(dueDate.charAt(i)));
+                i++;
+            }
+        }
+        return Integer.parseInt(month);
+    }
+
+    public int day(String dueDate) {
+        int firstDayChar = 1;
+        for (int i = 0; i < dueDate.length(); i++) {
+            if (dueDate.charAt(i) == '/') {
+                firstDayChar = i + 1;
+            }
+        }
+        String day = "";
+        int a = firstDayChar;
+        boolean isInt = true;
+        while(isInt) {
+            try {
+                Integer.parseInt(String.valueOf(dueDate.charAt(a)));
+            }catch(NumberFormatException e) {
+                isInt = false;
+            }
+            if(isInt) {
+                day = day.concat(String.valueOf(dueDate.charAt(a)));
+                a++;
+            }
+        }
+        return Integer.parseInt(day);
+    }
+    
 }
