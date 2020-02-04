@@ -4,7 +4,7 @@ public class Task {
     
     private int monthDue;
     
-    private int day;
+    private int dayDue;
 
     private String course;
 
@@ -15,7 +15,7 @@ public class Task {
         this.course = course;
         this.course = course;
         this.rating = rating;
-        this.day = day(dueDate);
+        this.dayDue = day(dueDate);
         this.monthDue = month(dueDate);
     }
 
