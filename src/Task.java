@@ -8,13 +8,10 @@ public class Task implements Comparable<Task>{
 
     private String course;
 
-    private int rating;
-
-    Task(String Name, String dueDate, String course, int rating) {
+    Task(String Name, String dueDate, String course) {
         this.Name = Name;
         this.course = course;
         this.course = course;
-        this.rating = rating;
         this.dayDue = day(dueDate);
         this.monthDue = month(dueDate);
     }
