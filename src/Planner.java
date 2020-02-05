@@ -1,6 +1,7 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
-public class Planner {
+public class Planner{
 
     private ArrayList<Task> tasks = new ArrayList<>();
 
@@ -16,5 +17,8 @@ public class Planner {
 
     public void addTask(Task newTask) {
         tasks.add(newTask);
+        Collections.sort(tasks);
     }
+
+
 }

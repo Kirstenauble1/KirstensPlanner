@@ -1,4 +1,4 @@
-public class Task {
+public class Task implements Comparable<Task>{
 
     private String Name;
     
@@ -60,5 +60,19 @@ public class Task {
         }
         return Integer.parseInt(day);
     }
-    
+
+    @Override
+    public int compareTo(Task task) {
+        if (this.monthDue < task.monthDue) {
+            return 1;
+        }else if (this.monthDue == task.monthDue) {
+            if(this.dayDue < task.dayDue) {
+                return 1;
+            }else if(this.dayDue == task.dayDue) {
+                return 0;
+            }
+        }
+        return -1;
+    }
+
 }
