@@ -33,8 +33,18 @@ public class Planner{
         }catch(FileNotFoundException f){
             System.exit(0);
         }
-        for(int i = 0; i < tasks.size(); i++){
-
+        try {
+            FileWriter writer = new FileWriter(this.file, true);
+            for (int i = 0; i < tasks.size(); i++) {
+                writer.write(tasks.get(i).getName());
+                writer.write(" ");
+                writer.write(tasks.get(i).getDueDate());
+                writer.write(" ");
+                writer.write(tasks.get(i).getCourse());
+                writer.write("\n");
+            }
+        }catch(IOException i){
+            System.exit(0);
         }
     }
 
