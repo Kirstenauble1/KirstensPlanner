@@ -48,6 +48,9 @@ public class Planner{
         }
     }
 
+    public void removeTask() {
+    }
+
     public void readFile() {
         BufferedReader reader;
         try{
