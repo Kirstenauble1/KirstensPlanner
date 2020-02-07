@@ -48,7 +48,14 @@ public class Planner{
         }
     }
 
-    public void removeTask() {
+    public void removeTask(Task t) {
+        for(int i = 0; i < this.size; i++){
+            if(t.getName().equals(this.tasks.get(i).getName())){
+                this.tasks.remove(i);
+                Collections.sort(this.tasks);
+                break;
+            }
+        }
     }
 
     public void readFile() {
