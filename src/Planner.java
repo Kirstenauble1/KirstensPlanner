@@ -46,6 +46,7 @@ public class Planner{
         }catch(IOException i){
             System.exit(0);
         }
+        this.size += 1;
     }
 
     public void removeTask(Task t) {

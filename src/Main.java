@@ -36,7 +36,7 @@ public class Main extends Application {
         addTask.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-                // must opne input box for task information, seperated by commas
+                // must open input box for task information, seperated by commas
                 //
             }
         });
